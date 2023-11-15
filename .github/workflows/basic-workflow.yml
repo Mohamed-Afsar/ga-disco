@@ -46,4 +46,5 @@ jobs:
     environment: Dev
     steps:
       - name: deploy
-      # . . . degLoyment-specific steps
+        run: echo Deploy!
+        # . . . degLoyment-specific steps
