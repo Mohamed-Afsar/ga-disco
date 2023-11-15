@@ -40,3 +40,10 @@ jobs:
       - name: Run only when a PR is opened
         if: ${{ github.event_name == 'pull_request'}}
         run: echo Hello, world!
+
+  deployment:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+      - name: deploy
+      # . . . degLoyment-specific steps
