@@ -48,3 +48,20 @@ jobs:
       - name: deploy
         run: echo Deploy!
         # . . . degLoyment-specific steps
+
+  afsar-composite-action-job:
+    runs-on: buntu-latest 
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Mohamed-Afsar/hello-afsar-composite-action
+          path: ./.github/actions/hello-afsar-composite-action
+          token: ${{ secrets.PROD_SECRET }}
+      - id: foo
+        uses: ./.github/actions/hello-afsar-composite-action
+        with:
+          who-to-greet: 'Mona the Octocat with EY!'
+
+      - run: echo 'Hello Custom Action'
+        shell: bash
+      
